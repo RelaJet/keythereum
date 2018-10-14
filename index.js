@@ -13,16 +13,15 @@ var sjcl = require("sjcl");
 var uuid = require("uuid");
 var secp256k1 = require("./lib/elliptic");
 
-// var createKeccakHash = require("keccak/js");
-var keccak256 = require('js-sha3').keccak256;
+var createKeccakHash = require("./js");
 
 function isFunction(f) {
   return typeof f === "function";
 }
 
-// function keccak256(buffer) {
-//   // return createKeccakHash("keccak256").update(buffer).digest();
-// }
+function keccak256(buffer) {
+  return createKeccakHash("keccak256").update(buffer).digest();
+}
 
 module.exports = {
 
